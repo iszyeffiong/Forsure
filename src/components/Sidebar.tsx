@@ -33,18 +33,18 @@ const Sidebar = () => {
       {/* Toggle Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed left-4 top-20 z-40 p-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-all shadow-lg"
+        className={`fixed left-4 top-20 z-40 p-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-all shadow-lg ${isOpen ? 'hidden' : 'block'}`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        <Menu className="h-6 w-6" />
       </motion.button>
 
       {/* Sidebar */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop */}
+            {/* Backdrop - Only on mobile */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -59,12 +59,22 @@ const Sidebar = () => {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -300, opacity: 0 }}
               transition={{ type: "spring", damping: 20 }}
-              className="fixed left-0 top-0 h-screen w-64 bg-background border-r shadow-xl z-40 overflow-y-auto"
+              className="fixed left-0 top-16 w-64 bg-background border-r shadow-xl z-40 rounded-br-2xl h-auto"
             >
-              <div className="p-6 pt-20">
-                <h3 className="font-heading font-bold text-lg mb-6 text-primary">
-                  Quick Links
-                </h3>
+              <div className="p-6 flex flex-col gap-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-heading font-bold text-lg text-primary">
+                    Quick Links
+                  </h3>
+                  <motion.button
+                    onClick={() => setIsOpen(false)}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="p-1 hover:bg-primary/10 rounded-lg transition-colors"
+                  >
+                    <X className="h-5 w-5 text-primary" />
+                  </motion.button>
+                </div>
                 <div className="space-y-2">
                   {menuItems.map((item) => (
                     <motion.a
