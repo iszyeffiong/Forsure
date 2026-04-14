@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import AdmissionInquiry from "@/components/AdmissionInquiry";
-import schoolImg from "@/assets/school-building.jpg";
+import schoolImg from "@/assets/school-building.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

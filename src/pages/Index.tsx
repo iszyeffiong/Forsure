@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import HeroSlider from "@/components/HeroSlider";
-import schoolImg from "@/assets/school-building.jpg";
+import schoolImg from "@/assets/school-building.jpeg";
 import ictImg from "@/assets/ict.jpeg";
 import ccaImg from "@/assets/Cultural & Creative Arts.jpeg";
 import humanitiesImg from "@/assets/Humanities.jpeg";
