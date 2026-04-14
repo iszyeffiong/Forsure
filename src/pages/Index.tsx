@@ -1,16 +1,217 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { BookOpen, Palette, FlaskConical, Wheat, Utensils, Monitor, Trophy, Newspaper, Music, ArrowRight, Quote } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Layout from "@/components/Layout";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import heroImg from "@/assets/hero-children.jpg";
+import schoolImg from "@/assets/school-building.jpg";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.5 },
+  }),
 };
 
-const Index = PlaceholderIndex;
+const curriculum = [
+  { icon: Monitor, label: "ICT", color: "text-sky" },
+  { icon: Palette, label: "Cultural & Creative Arts", color: "text-sunshine" },
+  { icon: BookOpen, label: "Humanities", color: "text-primary" },
+  { icon: FlaskConical, label: "Science", color: "text-accent" },
+  { icon: Wheat, label: "Agricultural Science", color: "text-leaf" },
+  { icon: Utensils, label: "Food & Nutrition", color: "text-sunshine" },
+];
+
+const activities = [
+  { icon: Trophy, label: "Athletics" },
+  { icon: Newspaper, label: "In-house Publications" },
+  { icon: Music, label: "Performing Arts & Music" },
+];
+
+const Index = () => (
+  <Layout>
+    {/* Hero */}
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={heroImg} alt="Happy students learning" className="w-full h-full object-cover" width={1920} height={1080} />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/60 to-foreground/30" />
+      </div>
+      <div className="container relative mx-auto px-4 py-24 md:py-36">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-2xl"
+        >
+          <h1 className="text-4xl md:text-6xl font-heading font-extrabold text-background leading-tight">
+            Learning Begins{" "}
+            <span className="text-sunshine">With Us</span>
+          </h1>
+          <p className="mt-4 text-lg text-background/80 max-w-lg leading-relaxed">
+            A supportive and inspiring environment for young minds to grow, learn, and thrive.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link to="/about">
+              <Button variant="sunshine" size="lg">Learn More</Button>
+            </Link>
+            <Link to="/contact">
+              <Button variant="hero-outline" size="lg" className="border-background text-background hover:bg-background hover:text-foreground">
+                Enroll Now
+              </Button>
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+
+    {/* About Preview */}
+    <section className="bg-warm">
+      <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={0}
+          >
+            <img
+              src={schoolImg}
+              alt="Madonna International School building"
+              className="rounded-2xl shadow-xl"
+              loading="lazy"
+              width={1280}
+              height={720}
+            />
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={1}
+            className="space-y-5"
+          >
+            <span className="text-sm font-bold text-primary uppercase tracking-wider">About Us</span>
+            <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-foreground">
+              Nurturing <span className="text-primary">Young Minds</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              We are an early learning academy focused on social-emotional development, literacy, and numeracy. We raise confident and creative thinkers.
+            </p>
+            <Link to="/about">
+              <Button variant="hero" className="mt-2 gap-2">
+                Read More <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+
+    {/* Stats */}
+    <section className="bg-primary">
+      <div className="container mx-auto px-4 py-14">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { end: 10, suffix: "+", label: "Years in Operation" },
+            { end: 60, suffix: "+", label: "Awards" },
+            { end: 700, suffix: "+", label: "Happy Students" },
+            { end: 200, suffix: "+", label: "Active PTA Members" },
+          ].map((s) => (
+            <div key={s.label} className="text-center">
+              <AnimatedCounter end={s.end} suffix={s.suffix} label={s.label} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Quote */}
+    <section className="bg-section-alt">
+      <div className="container mx-auto px-4 py-16 text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <Quote className="h-10 w-10 text-sunshine mx-auto mb-4" />
+          <blockquote className="text-xl md:text-2xl font-heading font-bold text-foreground max-w-3xl mx-auto italic leading-relaxed">
+            "We aim at inspiring our students to dream more, learn more, do more, and become more."
+          </blockquote>
+        </motion.div>
+      </div>
+    </section>
+
+    {/* Curriculum */}
+    <section className="container mx-auto px-4 py-16 md:py-24">
+      <div className="text-center mb-12">
+        <span className="text-sm font-bold text-primary uppercase tracking-wider">What We Teach</span>
+        <h2 className="text-3xl md:text-4xl font-heading font-extrabold mt-2">
+          Our <span className="text-primary">Curriculum</span>
+        </h2>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        {curriculum.map((c, i) => (
+          <motion.div
+            key={c.label}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={i}
+            className="bg-card p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow border text-center group"
+          >
+            <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-muted ${c.color} mb-4 group-hover:scale-110 transition-transform`}>
+              <c.icon className="h-7 w-7" />
+            </div>
+            <h3 className="font-heading font-bold">{c.label}</h3>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+
+    {/* Activities */}
+    <section className="bg-warm">
+      <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="text-center mb-12">
+          <span className="text-sm font-bold text-primary uppercase tracking-wider">Beyond the Classroom</span>
+          <h2 className="text-3xl md:text-4xl font-heading font-extrabold mt-2">
+            Exciting <span className="text-sunshine">Activities</span>
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {activities.map((a, i) => (
+            <motion.div
+              key={a.label}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              custom={i}
+              className="bg-card p-8 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition-all border"
+            >
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4">
+                <a.icon className="h-8 w-8" />
+              </div>
+              <h3 className="font-heading font-bold text-lg">{a.label}</h3>
+            </motion.div>
+          ))}
+        </div>
+        <div className="text-center mt-10">
+          <Link to="/activities">
+            <Button variant="hero" size="lg" className="gap-2">
+              View All Activities <ArrowRight className="h-4 w-4" />
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </section>
+  </Layout>
+);
 
 export default Index;
