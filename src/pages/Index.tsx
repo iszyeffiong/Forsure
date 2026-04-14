@@ -4,7 +4,7 @@ import { BookOpen, Palette, FlaskConical, Wheat, Utensils, Monitor, Trophy, News
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import heroImg from "@/assets/hero-children.jpg";
+import HeroSlider from "@/components/HeroSlider";
 import schoolImg from "@/assets/school-building.jpg";
 
 const fadeUp = {
@@ -33,39 +33,7 @@ const activities = [
 
 const Index = () => (
   <Layout>
-    {/* Hero */}
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={heroImg} alt="Happy students learning" className="w-full h-full object-cover" width={1920} height={1080} />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/60 to-foreground/30" />
-      </div>
-      <div className="container relative mx-auto px-4 py-24 md:py-36">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="max-w-2xl"
-        >
-          <h1 className="text-4xl md:text-6xl font-heading font-extrabold text-background leading-tight">
-            Learning Begins{" "}
-            <span className="text-sunshine">With Us</span>
-          </h1>
-          <p className="mt-4 text-lg text-background/80 max-w-lg leading-relaxed">
-            A supportive and inspiring environment for young minds to grow, learn, and thrive.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link to="/about">
-              <Button variant="sunshine" size="lg">Learn More</Button>
-            </Link>
-            <Link to="/contact">
-              <Button variant="hero-outline" size="lg" className="border-background text-background hover:bg-background hover:text-foreground">
-                Enroll Now
-              </Button>
-            </Link>
-          </div>
-        </motion.div>
-      </div>
-    </section>
+    <HeroSlider />
 
     {/* About Preview */}
     <section className="bg-warm">

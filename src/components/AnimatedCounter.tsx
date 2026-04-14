@@ -37,10 +37,10 @@ const AnimatedCounter = ({ end, suffix = "", label, duration = 2 }: Props) => {
       transition={{ duration: 0.5 }}
       className="text-center"
     >
-      <div className="text-4xl md:text-5xl font-heading font-extrabold text-primary">
+      <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-background">
         {count}{suffix}
       </div>
-      <div className="text-sm text-muted-foreground mt-1 font-medium">{label}</div>
+      <div className="text-xs sm:text-sm text-background/80 mt-1 font-medium">{label}</div>
     </motion.div>
   );
 };
