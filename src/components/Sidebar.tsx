@@ -21,7 +21,7 @@ const menuItems = [
   {
     icon: Briefcase,
     label: "Careers",
-    href: "https://madonna.easy.jobs/7952-teacher",
+    href: "mailto:forsureinternationalschools@gmail.com?subject=Career%20Inquiry",
   },
 ];
 

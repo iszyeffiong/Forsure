@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Baby, Sun, BookOpen, GraduationCap, School, Code, Palette, Globe, Beaker, Calculator } from "lucide-react";
+import { Baby, Sun, BookOpen, GraduationCap, School, Code, Palette, Globe, Beaker, Calculator, BookMarked } from "lucide-react";
 import Layout from "@/components/Layout";
+import AdmissionInquiry from "@/components/AdmissionInquiry";
 
 const sections = [
   { icon: Baby, label: "Playclass", desc: "Early play-based learning for toddlers, building social skills through fun." },
@@ -8,6 +9,7 @@ const sections = [
   { icon: BookOpen, label: "Pre-Nursery", desc: "Introduction to letters, numbers, and creative expression." },
   { icon: GraduationCap, label: "Nursery", desc: "Building reading, writing, and critical thinking foundations." },
   { icon: School, label: "Primary", desc: "Comprehensive curriculum preparing students for academic excellence." },
+  { icon: BookMarked, label: "Secondary", desc: "Advanced academics with specialized subjects preparing students for higher education and career success." },
 ];
 
 const subjects = [
@@ -134,6 +136,9 @@ const Academics = () => (
         ))}
       </div>
     </section>
+
+    {/* Admission Inquiry */}
+    <AdmissionInquiry />
   </Layout>
 );
 

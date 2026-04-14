@@ -21,9 +21,9 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b shadow-sm">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <img src="/logo.jpg" alt="Madonna International Schools" className="h-10 w-10 rounded-full object-cover" />
+          <img src="/logo.jpg" alt="Forsure International Schools" className="h-10 w-10 rounded-full object-cover" />
           <span className="font-heading font-extrabold text-lg text-primary hidden sm:inline">
-            Madonna Int'l Schools
+            Forsure Int'l Schools
           </span>
         </Link>
 
@@ -43,13 +43,13 @@ const Navbar = () => {
             </Link>
           ))}
           <a
-            href="https://mail.micasaba.com.ng"
+            href="mailto:forsureinternationalschools@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button variant="hero" size="sm" className="ml-2 gap-1.5">
               <Mail className="h-4 w-4" />
-              School Mail
+            
             </Button>
           </a>
         </div>
@@ -83,14 +83,14 @@ const Navbar = () => {
               </Link>
             ))}
             <a
-              href="https://mail.micasaba.com.ng"
+              href="mailto:forsureinternationalschools@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2"
             >
               <Button variant="hero" size="sm" className="w-full gap-1.5">
                 <Mail className="h-4 w-4" />
-                School Mail
+                Contact
               </Button>
             </a>
           </div>

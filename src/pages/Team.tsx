@@ -334,7 +334,7 @@ const Team = () => {
               Our <span className="text-primary">Team</span>
             </h1>
             <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
-              Meet the dedicated educators and staff making Madonna International Schools special
+              Meet the dedicated educators and staff making Forsure International Schools special
             </p>
           </motion.div>
         </div>

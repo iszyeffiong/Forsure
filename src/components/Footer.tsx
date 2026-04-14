@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Send } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
@@ -9,7 +9,7 @@ const Footer = () => (
         <div className="space-y-4">
           <div className="flex items-center gap-2">
             <img src="/logo.jpg" alt="Logo" className="h-10 w-10 rounded-full object-cover" />
-            <span className="font-heading font-extrabold text-lg">Madonna Int'l Schools</span>
+            <span className="font-heading font-extrabold text-lg">Forsure Int'l Schools</span>
           </div>
           <p className="text-sm opacity-70 leading-relaxed">
             A supportive and inspiring environment for young minds to grow, learn, and thrive.
@@ -40,18 +40,18 @@ const Footer = () => (
           <div className="space-y-3 text-sm opacity-70">
             <div className="flex gap-2 items-start">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-sunshine" />
-              <span>No 1 Madonna College Way Behind NTA, Asaba, Delta State</span>
+              <span>Block H, Behind Judiciary Quarters, off Idongesit Nkanga Ave., Opp. Hensek Yard, Ring Road 3, Anyam, Use Offot, Uyo, Nigeria</span>
             </div>
             <div className="flex gap-2 items-center">
               <Phone className="h-4 w-4 shrink-0 text-sunshine" />
               <div className="flex flex-col">
-                <a href="tel:+2348038785226" className="hover:text-sunshine">+234 803 878 5226</a>
-                <a href="tel:+2348033362933" className="hover:text-sunshine">+234 803 336 2933</a>
+                <a href="tel:07034865342" className="hover:text-sunshine">0703 486 5342</a>
+                <a href="tel:+2349055357728" className="hover:text-sunshine">+234 905 535 7728</a>
               </div>
             </div>
             <div className="flex gap-2 items-center">
               <Mail className="h-4 w-4 shrink-0 text-sunshine" />
-              <a href="mailto:admin@micasaba.com.ng" className="hover:text-sunshine">admin@micasaba.com.ng</a>
+              <a href="mailto:forsureinternationalschools@gmail.com" className="hover:text-sunshine">forsureinternationalschools@gmail.com</a>
             </div>
             <div className="flex gap-2 items-center">
               <Clock className="h-4 w-4 shrink-0 text-sunshine" />
@@ -68,7 +68,7 @@ const Footer = () => (
               { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100063838911987&sk=directory_contact_info", label: "Facebook" },
               { icon: Instagram, href: "#", label: "Instagram" },
               { icon: Twitter, href: "#", label: "X" },
-              { icon: MessageCircle, href: "https://wa.me/2348038785226", label: "WhatsApp" },
+              { icon: Send, href: "https://wa.me/2348038785226", label: "WhatsApp" },
             ].map((s) => (
               <a
                 key={s.label}
@@ -86,7 +86,7 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-background/10 mt-10 pt-6 text-center text-sm opacity-50">
-        © {new Date().getFullYear()} Madonna International Schools. All rights reserved.
+        © {new Date().getFullYear()} Forsure International Schools. All rights reserved.
       </div>
     </div>
   </footer>

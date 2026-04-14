@@ -43,9 +43,9 @@ const Contact = () => {
             <h2 className="text-2xl font-heading font-bold">Contact Information</h2>
             <div className="space-y-6">
               {[
-                { icon: MapPin, label: "Address", value: "# 1 MADONNA COLLEGE WAY BEHIND N.T.A ASABA, DELTA STATE" },
-                { icon: Phone, label: "Phone", value: "+2348038785226 +2348033362933" },
-                { icon: Mail, label: "Email", value: "admin@micasaba.com.ng" },
+                { icon: MapPin, label: "Address", value: "Block H, Behind Judiciary Quarters, off Idongesit Nkanga Ave., Opp. Hensek Yard, Ring Road 3, Anyam, Use Offot, Uyo, Nigeria" },
+                { icon: Phone, label: "Phone", value: "0703 486 5342 | +234 905 535 7728" },
+                { icon: Mail, label: "Email", value: "forsureinternationalschools@gmail.com" },
               ].map((c) => (
                 <div key={c.label} className="flex gap-4 items-start">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">

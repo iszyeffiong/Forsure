@@ -2,20 +2,36 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import Layout from "@/components/Layout";
-import heroImg from "@/assets/hero-children.jpg";
-import schoolImg from "@/assets/school-building.jpg";
-import heroSlide2 from "@/assets/hero-slide2.jpg";
+
+// Import all gallery images
+import img1 from "@/assets/gallery/65.jpg";
+import img2 from "@/assets/gallery/art work.jpg";
+import img3 from "@/assets/gallery/art work2.jpg";
+import img4 from "@/assets/gallery/class room.jpg";
+import img5 from "@/assets/gallery/egg hunt.jpg";
+import img6 from "@/assets/gallery/excursion to the airport.jpg";
+import img7 from "@/assets/gallery/excursion to the airport1.jpg";
+import img8 from "@/assets/gallery/excursion to the airport2.jpg";
+import img9 from "@/assets/gallery/excursion.jpg";
+import img10 from "@/assets/gallery/excursion2.jpg";
+import img11 from "@/assets/gallery/excursion3.jpg";
+import img12 from "@/assets/gallery/game day.jpg";
+import img13 from "@/assets/gallery/lab room.jpg";
 
 const galleryImages = [
-  { src: heroImg, alt: "Students learning", category: "Students" },
-  { src: schoolImg, alt: "School building", category: "Environment" },
-  { src: heroSlide2, alt: "School activities", category: "Activities" },
-  { src: heroImg, alt: "Classroom session", category: "Students" },
-  { src: schoolImg, alt: "School grounds", category: "Environment" },
-  { src: heroSlide2, alt: "School event", category: "Activities" },
-  { src: heroImg, alt: "Student engagement", category: "Students" },
-  { src: schoolImg, alt: "School infrastructure", category: "Environment" },
-  { src: heroSlide2, alt: "Cultural activities", category: "Activities" },
+  { src: img1, alt: "School activities", category: "Activities" },
+  { src: img2, alt: "Art work showcase", category: "Arts" },
+  { src: img3, alt: "Creative artwork", category: "Arts" },
+  { src: img4, alt: "Classroom session", category: "Academics" },
+  { src: img5, alt: "Egg hunt event", category: "Activities" },
+  { src: img6, alt: "Excursion to airport", category: "Excursions" },
+  { src: img7, alt: "Airport visit", category: "Excursions" },
+  { src: img8, alt: "Airport excursion", category: "Excursions" },
+  { src: img9, alt: "School excursion", category: "Excursions" },
+  { src: img10, alt: "Field trip", category: "Excursions" },
+  { src: img11, alt: "Excursion moment", category: "Excursions" },
+  { src: img12, alt: "Game day event", category: "Activities" },
+  { src: img13, alt: "Science lab", category: "Academics" },
 ];
 
 const fadeUp = {
@@ -31,7 +47,7 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [filter, setFilter] = useState("All");
 
-  const categories = ["All", "Students", "Environment", "Activities"];
+  const categories = ["All", "Activities", "Arts", "Academics", "Excursions"];
   const filteredImages =
     filter === "All"
       ? galleryImages
@@ -51,7 +67,7 @@ const Gallery = () => {
               Our <span className="text-primary">Gallery</span>
             </h1>
             <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
-              Explore moments of learning, growth, and joy at Madonna International Schools
+              Explore moments of learning, growth, and joy at Forsure International Schools
             </p>
           </motion.div>
         </div>

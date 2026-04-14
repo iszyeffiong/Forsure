@@ -54,7 +54,7 @@ const Index = () => (
           >
             <img
               src={schoolImg}
-              alt="Madonna International School building"
+              alt="Forsure International Schools building"
               className="rounded-2xl shadow-xl"
               loading="lazy"
               width={1280}
@@ -74,7 +74,7 @@ const Index = () => (
               Nurturing <span className="text-primary">Young Minds</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We are an early learning academy focused on social-emotional development, literacy, and numeracy. We raise confident and creative thinkers.
+              We are a comprehensive learning institution serving Creche, Preschool, Nursery, Grade, and Secondary levels. We focus on social-emotional development, literacy, and numeracy. We raise confident and creative thinkers prepared for success.
             </p>
             <Link to="/about">
               <Button variant="hero" className="mt-2 gap-2">

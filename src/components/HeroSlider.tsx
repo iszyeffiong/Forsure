@@ -4,9 +4,8 @@ import Autoplay from "embla-carousel-autoplay";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import eggHuntImg from "@/assets/gallery/egg hunt.jpg";
-import heroImg from "@/assets/hero-children.jpg";
-import heroSlide2 from "@/assets/hero-slide2.jpg";
+import slider1 from "@/assets/gallery/excursion to the airport.jpg";
+import slider2 from "@/assets/gallery/excursion3.jpg";
 import heroSlide3 from "@/assets/hero-slide3.jpg";
 
 const typingVariants = {
@@ -28,21 +27,21 @@ const letterVariants = {
 const slides = [
   {
     type: "image" as const,
-    src: eggHuntImg,
+    src: slider1,
     heading: "Learning Begins",
     highlight: "With Us",
     description: "A supportive and inspiring environment for young minds to grow, learn, and thrive.",
   },
   {
     type: "image" as const,
-    src: heroImg,
+    src: slider2,
     heading: "Nurturing",
     highlight: "Young Minds",
     description: "Building strong academic foundations while developing confidence and creativity.",
   },
   {
     type: "image" as const,
-    src: heroSlide2,
+    src: heroSlide3,
     heading: "Discover Your",
     highlight: "Potential",
     description: "We empower students to dream more, learn more, and become more every day.",
