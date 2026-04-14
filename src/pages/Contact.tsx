@@ -43,8 +43,8 @@ const Contact = () => {
             <h2 className="text-2xl font-heading font-bold">Contact Information</h2>
             <div className="space-y-6">
               {[
-                { icon: MapPin, label: "Address", value: "No 1 Madonna College Way, Asaba, Delta State" },
-                { icon: Phone, label: "Phone", value: "08033362933" },
+                { icon: MapPin, label: "Address", value: "# 1 MADONNA COLLEGE WAY BEHIND N.T.A ASABA, DELTA STATE" },
+                { icon: Phone, label: "Phone", value: "+2348038785226 +2348033362933" },
                 { icon: Mail, label: "Email", value: "admin@micasaba.com.ng" },
               ].map((c) => (
                 <div key={c.label} className="flex gap-4 items-start">

@@ -8,6 +8,22 @@ import heroImg from "@/assets/hero-children.jpg";
 import heroSlide2 from "@/assets/hero-slide2.jpg";
 import heroSlide3 from "@/assets/hero-slide3.jpg";
 
+const typingVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const letterVariants = {
+  hidden: { opacity: 0, x: -10 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
+};
+
 const slides = [
   {
     type: "video" as const,
@@ -87,7 +103,22 @@ const HeroSlider = () => {
                     >
                       <h1 className="text-3xl sm:text-4xl md:text-6xl font-heading font-extrabold text-background leading-tight">
                         {slide.heading}{" "}
-                        <span className="text-sunshine">{slide.highlight}</span>
+                        {i === 0 ? (
+                          <motion.span
+                            className="text-sunshine inline-block"
+                            variants={typingVariants}
+                            initial="hidden"
+                            animate="visible"
+                          >
+                            {slide.highlight.split("").map((char, idx) => (
+                              <motion.span key={idx} variants={letterVariants}>
+                                {char}
+                              </motion.span>
+                            ))}
+                          </motion.span>
+                        ) : (
+                          <span className="text-sunshine">{slide.highlight}</span>
+                        )}
                       </h1>
                       <p className="mt-4 text-sm sm:text-base md:text-lg text-background/80 max-w-lg leading-relaxed">
                         {slide.description}
@@ -100,7 +131,7 @@ const HeroSlider = () => {
                           <Button
                             variant="hero-outline"
                             size="lg"
-                            className="border-background text-background hover:bg-background hover:text-foreground"
+                            className="border-background text-foreground hover:bg-background hover:text-foreground"
                           >
                             Enroll Now
                           </Button>

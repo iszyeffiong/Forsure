@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, Palette, FlaskConical, Wheat, Utensils, Monitor, Trophy, Newspaper, Music, ArrowRight, Quote } from "lucide-react";
+import { Trophy, Newspaper, Music, ArrowRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import HeroSlider from "@/components/HeroSlider";
 import schoolImg from "@/assets/school-building.jpg";
+import ictImg from "@/assets/ict.jpeg";
+import ccaImg from "@/assets/Cultural & Creative Arts.jpeg";
+import humanitiesImg from "@/assets/Humanities.jpeg";
+import scienceImg from "@/assets/Science.jpeg";
+import agriImg from "@/assets/Agricultural Science.jpeg";
+import foodImg from "@/assets/Food and Nutrition.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -17,12 +23,12 @@ const fadeUp = {
 };
 
 const curriculum = [
-  { icon: Monitor, label: "ICT", color: "text-sky" },
-  { icon: Palette, label: "Cultural & Creative Arts", color: "text-sunshine" },
-  { icon: BookOpen, label: "Humanities", color: "text-primary" },
-  { icon: FlaskConical, label: "Science", color: "text-accent" },
-  { icon: Wheat, label: "Agricultural Science", color: "text-leaf" },
-  { icon: Utensils, label: "Food & Nutrition", color: "text-sunshine" },
+  { image: ictImg, label: "ICT", description: "Equipping students with digital literacy and technology skills for the modern world." },
+  { image: ccaImg, label: "Cultural & Creative Arts", description: "Fostering creativity and cultural appreciation through art, music, and performances." },
+  { image: humanitiesImg, label: "Humanities", description: "Exploring history, languages, and social sciences to develop critical thinking." },
+  { image: scienceImg, label: "Science", description: "Building scientific knowledge through hands-on experiments and practical learning." },
+  { image: agriImg, label: "Agricultural Science", description: "Teaching sustainable farming and agricultural practices for environmental awareness." },
+  { image: foodImg, label: "Food & Nutrition", description: "Developing culinary skills and nutritional knowledge for healthy living." },
 ];
 
 const activities = [
@@ -132,12 +138,18 @@ const Index = () => (
             viewport={{ once: true }}
             variants={fadeUp}
             custom={i}
-            className="bg-card p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow border text-center group"
+            className="bg-card p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow border text-center group overflow-hidden"
           >
-            <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-muted ${c.color} mb-4 group-hover:scale-110 transition-transform`}>
-              <c.icon className="h-7 w-7" />
+            <div className="mb-4 overflow-hidden rounded-lg h-64 group-hover:scale-110 transition-transform duration-300">
+              <img
+                src={c.image}
+                alt={c.label}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
-            <h3 className="font-heading font-bold">{c.label}</h3>
+            <h3 className="font-heading font-bold text-lg mb-2">{c.label}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{c.description}</p>
           </motion.div>
         ))}
       </div>

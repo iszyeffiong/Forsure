@@ -2,13 +2,14 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Academics", path: "/academics" },
   { label: "Activities", path: "/activities" },
+  { label: "Gallery", path: "/gallery" },
+  { label: "Team", path: "/team" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -20,7 +21,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b shadow-sm">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Madonna International Schools" className="h-10 w-10 rounded-full object-cover" />
+          <img src="/logo.jpg" alt="Madonna International Schools" className="h-10 w-10 rounded-full object-cover" />
           <span className="font-heading font-extrabold text-lg text-primary hidden sm:inline">
             Madonna Int'l Schools
           </span>

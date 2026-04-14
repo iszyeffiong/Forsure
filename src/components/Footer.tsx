@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, MessageCircle } from "lucide-react";
-import logo from "@/assets/logo.png";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
@@ -9,7 +8,7 @@ const Footer = () => (
         {/* Brand */}
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Logo" className="h-10 w-10 rounded-full" />
+            <img src="/logo.jpg" alt="Logo" className="h-10 w-10 rounded-full object-cover" />
             <span className="font-heading font-extrabold text-lg">Madonna Int'l Schools</span>
           </div>
           <p className="text-sm opacity-70 leading-relaxed">
@@ -66,15 +65,17 @@ const Footer = () => (
           <h4 className="font-heading font-bold text-sunshine mb-4">Follow Us</h4>
           <div className="flex gap-3">
             {[
-              { icon: Facebook, href: "#", label: "Facebook" },
+              { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100063838911987&sk=directory_contact_info", label: "Facebook" },
               { icon: Instagram, href: "#", label: "Instagram" },
               { icon: Twitter, href: "#", label: "X" },
-              { icon: MessageCircle, href: "#", label: "WhatsApp" },
+              { icon: MessageCircle, href: "https://wa.me/2348038785226", label: "WhatsApp" },
             ].map((s) => (
               <a
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full bg-background/10 hover:bg-sunshine hover:text-secondary-foreground transition-all duration-300"
               >
                 <s.icon className="h-5 w-5" />
