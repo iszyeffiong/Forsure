@@ -4,6 +4,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import eggHuntImg from "@/assets/gallery/egg hunt.jpg";
 import heroImg from "@/assets/hero-children.jpg";
 import heroSlide2 from "@/assets/hero-slide2.jpg";
 import heroSlide3 from "@/assets/hero-slide3.jpg";
@@ -26,8 +27,8 @@ const letterVariants = {
 
 const slides = [
   {
-    type: "video" as const,
-    src: "https://videos.pexels.com/video-files/8363029/8363029-uhd_2560_1440_25fps.mp4",
+    type: "image" as const,
+    src: eggHuntImg,
     heading: "Learning Begins",
     highlight: "With Us",
     description: "A supportive and inspiring environment for young minds to grow, learn, and thrive.",
@@ -73,24 +74,13 @@ const HeroSlider = () => {
           {slides.map((slide, i) => (
             <div key={i} className="min-w-0 shrink-0 grow-0 basis-full relative">
               <div className="relative h-[70vh] min-h-[400px] md:min-h-[500px]">
-                {slide.type === "video" ? (
-                  <video
-                    src={slide.src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <img
-                    src={slide.src}
-                    alt={`${slide.heading} ${slide.highlight}`}
-                    className="w-full h-full object-cover"
-                    width={1920}
-                    height={1080}
-                  />
-                )}
+                <img
+                  src={slide.src}
+                  alt={`${slide.heading} ${slide.highlight}`}
+                  className="w-full h-full object-cover"
+                  width={1920}
+                  height={1080}
+                />
                 <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/60 to-foreground/30" />
                 <div className="absolute inset-0 flex items-center">
                   <div className="container mx-auto px-4">
